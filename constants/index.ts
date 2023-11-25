@@ -198,12 +198,6 @@ export const Skill_data = [
       height: 70,
     },
     {
-      skill_name: "Prisma",
-      Image: "/prisma.webp",
-      width: 70,
-      height: 70,
-    },
-    {
       skill_name: "Graphql",
       Image: "/graphql.png",
       width: 80,
@@ -215,12 +209,6 @@ export const Skill_data = [
     {
       skill_name: "React Native",
       Image: "/ReactNative .png",
-      width: 70,
-      height: 70,
-    },
-    {
-      skill_name: "Tauri",
-      Image: "/tauri.svg",
       width: 70,
       height: 70,
     },

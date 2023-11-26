@@ -1,9 +1,24 @@
+"use client";
 import React from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 type Props ={};
 
+type Inputs = {
+    Name: string
+    Subject: string
+    Email: string
+    Message: string
+  }
+
+  
 export default function ContactMe( {}: Props ) {
+    const {register, handleSubmit} = useForm<Inputs>();
+    const onSubmit: SubmitHandler<Inputs> = (data) =>{
+        window.location.href = `mailto:sghaiermazen7@gmail.com?subject=${data.Subject}&body=Hi, my name is ${data.Name}. ${data.Message}: (${data.Email})`
+    }
+    
   return (
     <div className='flex relative  flex-col text-center md:text-left md:flex-row max-w-2xl px-20 w-full justify-evenly mx-auto items-center mb-20'>
         
@@ -29,13 +44,13 @@ export default function ContactMe( {}: Props ) {
             </div>
         </div>
 
-        <form className='flex flex-col space-y-2 w-fit mx-auto'>
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
             <div className='flex gap-2 flex-col md:flex-row'>
-                <input placeholder='First Name' className='outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#d1d1d1] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7ABA0A]/40 hover:border-[#F7AB0A]/40' title='First Name' type="text"/>
-                <input placeholder='Last Name' className='outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#d1d1d1] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7ABA0A]/40 hover:border-[#F7AB0A]/40' title='Last Name' type="text"/>
+                <input {...register('Name')} placeholder='Name' className='outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#d1d1d1] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7ABA0A]/40 hover:border-[#F7AB0A]/40' title='Name' type="text"/>
+                <input {...register('Email')} placeholder='Email' className='outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#d1d1d1] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7ABA0A]/40 hover:border-[#F7AB0A]/40' title='Email' type="Email"/>
             </div>
-            <input placeholder='Email' className='outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#d1d1d1] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7ABA0A]/40 hover:border-[#F7AB0A]/40' title='Email' type="text"/>
-            <textarea placeholder='Message' className='outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#d1d1d1] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7ABA0A]/40 hover:border-[#F7AB0A]/40' title='text'/>
+            <input {...register('Subject')} placeholder='Subject' className='outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#d1d1d1] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7ABA0A]/40 hover:border-[#F7AB0A]/40' title='Subject' type="text"/>
+            <textarea {...register('Message')} placeholder='Message' className='outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#d1d1d1] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7ABA0A]/40 hover:border-[#F7AB0A]/40' title='text'/>
             <button className='bg-[#F7AB0A] py-5 px-10 rounded-md text-white font-bold text-lg' type='submit' title='submit'>Submit</button>
         </form>
         </div>

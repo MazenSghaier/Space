@@ -39,21 +39,16 @@ export default defineType({
       type:'boolean',
     },
     {
-      name:"technologies",
-      title:"Technologies",
-      type:'array',
-      options:{
-        of: [{ type: "reference",to:{type: "skill"} }]
-      }
+      name: "technologies",
+      title: "Technologies",
+      type: "array",
+      of: [{ type: "reference", to: { type: "skill" } }],
     },
     {
       name:"points",
       title:"Points",
       type:'array',
-      options:{
-        of: [{ type: "string" }]
-      }
+      of: [{ type: "string" }]
     }
-
   ],
 })

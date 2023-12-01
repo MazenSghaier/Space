@@ -180,12 +180,6 @@ export const Skill_data = [
       height: 40,
     },
     {
-      skill_name: "Fire base",
-      Image: "/Firebase.png",
-      width: 55,
-      height: 55,
-    },
-    {
       skill_name: "Postger SQL",
       Image: "/postger.png",
       width: 70,
@@ -207,6 +201,12 @@ export const Skill_data = [
   
   export const Full_stack = [
     {
+      skill_name: "Mern Stack",
+      Image: "/mern.jpg",
+      width: 70,
+      height: 70,
+    },
+    {
       skill_name: "React Native",
       Image: "/ReactNative .png",
       width: 70,
@@ -225,7 +225,7 @@ export const Skill_data = [
       width: 50,
       height: 50,
     },
-  
+    
   ];
   
   

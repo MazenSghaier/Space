@@ -31,7 +31,7 @@ export default function About({}:Props) {
                 little
             </span>  background</h4>
             <p className='text-1xl text-white font-sans'>
-                Hello👋, I'm a full-stack developer with a focus and a passion for creating intuitive and interactive web. My approach to development is all about making sure your project performs well, is accessible, is easy to maintain, and scalable.
+                Hello👋, I'm a second year software engineering student and I'm a full-stack developer with a focus and a passion for creating intuitive and interactive web. My approach to development is all about making sure your project performs well, is accessible, is easy to maintain, and scalable.
                 I have expertise in React, Node, CSS (especially TailwindCSS), and responsive design. {" "}
                 Also, I have mastered many programming languages (C-C++/Python/Java/) by building many projects.{" "}
                 My goal is to create websites that are not only visually appealing but also highly functional.{" "}

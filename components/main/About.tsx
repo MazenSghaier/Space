@@ -6,7 +6,7 @@ type Props ={};
 
 export default function About({}:Props) {
   return (
-    <div className='flex flex-col relative h-screen mt-40 text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
+    <div className='flex flex-col relative h-screen z-[-1] mt-40 text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
       <div className='flex flex-col md:w-1/2 w-full justify-center items-center'>
             <h3 className='align-middle justify-center uppercase tracking-px[20] text-white max-w-[600px] w-auto h-auto text-4xl font-bold'>
             About</h3>

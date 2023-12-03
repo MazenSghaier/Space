@@ -8,6 +8,9 @@
  * You can learn more about the next-sanity package here:
  * https://github.com/sanity-io/next-sanity
  */
+process.env.NEXT_PUBLIC_SANITY_PROJECT_ID="egumyvxa"
+process.env.NEXT_PUBLIC_SANITY_DATASET="production"
+process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2023-11-26";
 
 import { NextStudio } from 'next-sanity/studio'
 import config from '../../../sanity.config'

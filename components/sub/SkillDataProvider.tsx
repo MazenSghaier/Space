@@ -10,10 +10,12 @@ interface Props {
     width: number;
     height: number;
     index: number;
+    skillName: string;
 }
 
-const SkillDataProvider = ({ src, width, height, index} : Props) => {
-  
+const SkillDataProvider = ({ src, width, height, index,skillName} : Props) => {
+
+  const [isHovered, setIsHovered] = useState(false);
     const {ref, inView} = useInView({
         triggerOnce: true
     })
@@ -32,6 +34,9 @@ const SkillDataProvider = ({ src, width, height, index} : Props) => {
         animate={inView ? "visible" : "hidden"}
         custom={index}
         transition={{delay: index * animationDelay}}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="relative"
         >
             <Image
         src={src}
@@ -39,6 +44,11 @@ const SkillDataProvider = ({ src, width, height, index} : Props) => {
         height={height}
         alt='skill image'
             />
+       {isHovered && (
+                <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-80 text-white">
+                    <p className="text-lg font-bold">{skillName}</p>
+                </div>
+            )}     
     <div className="absolute opacity-0 group-hover:opacity-80 transition duration-300
             ease-in-out group-hover:bg-white h-24 w-24 md:w-28 md:h-28 xl:h-28 xl:w-32 rounde-full z-0">
               <div className="flex items-center justify-center h-full">

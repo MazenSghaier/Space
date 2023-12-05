@@ -16,20 +16,20 @@ function Projects() {
         
         <ProjectCard
             src="/NextWebsite.png"
-            title="Modern Next.js Portfolio"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            title="Modern Mern Stack Platform"
+            description="A MERN stack project is an educational platform designed to provide a seamless user experience for both visitors and students. Mern technologies + TypeScript + Tailwind CSS + Redux + Redux Persist + Material UI ."
         />
         
         <ProjectCard
           src="/CardImage.png"
-          title="Interactive Website Cards"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          title="Modern React Native Django App"
+          description="This is modern mobile Tourisme sites & Restaurant application to provide the user as much locations to visit in a particulaire city. React Native + Django + Redux                                                   ."
         />
   
         <ProjectCard
           src="/SpaceWebsite.png"
           title="Space Themed Website"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="This is modern portfolio build in order to represnte the developer's competences and qualifications in web\mobile development and Devops. Using Next.js 14 + Typescript + Tailwind CSS + sanity.io + framer motion   ."
         />
       </div>
     </div>

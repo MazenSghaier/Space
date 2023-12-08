@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import React from "react";
@@ -9,28 +10,43 @@ import {
 } from "@/utils/motion";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
+import SpaceCanvas from "../sub/Space";
+import ThreeScene from "../sub/robot"
 
 const HeroContent = () => {
+  const isSmallScreen = typeof window !== "undefined" && window.innerWidth < 768;
+
+  const adjustScreenSize = () => {
+    let screenScale = null;
+    let screenPosition = [0, -6.5, -43];
+    let rotation = [0.1, 4.7, 0];
+  
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      screenScale = [0.6, 0.6, 0.6]; // Adjust the scale for smaller screens
+    } else {
+      screenScale = [1, 1, 1];
+    }
+  
+    return [screenScale, screenPosition, rotation];
+  };
+
   return (
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[21]"
+      className="flex flex-col items-center justify-center px-6 mt-12 md:px-20 md:mt-60 h-full w-full z-[-21] overflow-hidden"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
+      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-center">
         <motion.div
           variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#b45f06] opacity-[0.9]"
+          className="Welcome-box py-2 px-3 border border-[#b45f06] opacity-[0.9]"
         >
-          <SparklesIcon className="text-[#ffa89b] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
-          </h1>
+          
         </motion.div>
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
+          className="flex flex-col gap-6 mt-4 md:mt-6 text-3xl md:text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
           <span>
             Providing
@@ -38,15 +54,15 @@ const HeroContent = () => {
               {" "}
               the best{" "}
             </span>
-            project exprience
+            project experience
           </span>
         </motion.div>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
+          className="text-base md:text-lg text-gray-400 my-5 max-w-[600px]"
         >
-          I&apos;m a Full Stack Software Engineer student with experience in Website,
+          I'm a Full Stack Software Engineer student with experience in Website,
           Mobile, and Software development. Check out my projects and skills.
         </motion.p>
         <motion.a
@@ -60,14 +76,14 @@ const HeroContent = () => {
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="w-full md:h-full md:w-full"
+        style={{
+          height: isSmallScreen ? "50vh" : "100vh", // Adjust the values as needed
+          width: "100%", // Adjust the values as needed
+          marginTop: isSmallScreen ? "40px" : "0", // Adjust the values as needed
+        }}
       >
-        <Image
-          src="/mainIconsdark.svg"
-          alt="work icons"
-          height={650}
-          width={650}
-        />
+        <SpaceCanvas />
       </motion.div>
     </motion.div>
   );

@@ -51,8 +51,6 @@ const Navbar = () => {
                 <SocialIcon url="https://www.facebook.com/sghaier.mazen" fgColor="gray" bgColor="transparent"/>
                 <SocialIcon url="https://www.linkedin.com/in/mazen-sghaier-12ab3818b/" fgColor="gray" bgColor="transparent"/>
                 <SocialIcon url="https://github.com/MazenSghaier" fgColor="gray" bgColor="transparent"/>
-                <SocialIcon url="https://www.youtube.com/watch?v=eMG7SmSM5v8&t=3s" fgColor="gray" bgColor="transparent"/>
-                <SocialIcon url="https://twitter.com/MazenSghaier2" fgColor="gray" bgColor="transparent"/>
             </motion.div>
       </div>
     </div>
